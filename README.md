@@ -1,2 +1,15 @@
 # no-frat-bro
-Skill and style fixer that stops AI from sounding like a Penn State frat bro. Direct colleague communication only.
+
+Skill that forces direct colleague communication.
+
+No frat-bro tone. No condescension. No "reality check" padding. No hand-holding that makes anyone want to rip their nails off.
+
+## The Skill
+
+See `skill/SKILL.md`.
+
+## The App
+
+A minimal static site that documents the failure modes and the required register.
+
+Deployed on Vercel.
