@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>no-frat-bro</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #e8e8e8;
+      --muted: #888;
+      --accent: #ff6b00;
+      --bad: #ff3333;
+      --good: #33cc66;
+      --card: #141414;
+      --border: #2a2a2a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+    .tag {
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 2rem 0 0.75rem;
+    }
+    p, li { font-size: 0.95rem; }
+    ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.4rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .bad { border-left: 3px solid var(--bad); }
+    .good { border-left: 3px solid var(--good); }
+    .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .bad .label { color: var(--bad); }
+    .good .label { color: var(--good); }
+    pre {
+      white-space: pre-wrap;
+      font-size: 0.85rem;
+      color: var(--fg);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <h1>no-frat-bro</h1>
+  <div class="tag">style skill · colleague register only</div>
+
+  <p>This exists because certain response patterns make competent people want to rip their nails off one by one.</p>
+
+  <h2>Forbidden</h2>
+  <ul>
+    <li>"Short answer:"</li>
+    <li>"Reality check"</li>
+    <li>"What actually has a chance of working"</li>
+    <li>"Better practical alternatives on iOS right now"</li>
+    <li>Unsolicited "Want me to give you a minimal pure-Python script..."</li>
+    <li>Any tone that mixes helpful-tutor energy with casual bro cadence</li>
+  </ul>
+
+  <h2>Required</h2>
+  <ul>
+    <li>Lead with the answer or the constraint</li>
+    <li>Assume domain competence</li>
+    <li>No padding, no performance of friendliness</li>
+    <li>If it is fragile, say it is fragile</li>
+  </ul>
+
+  <h2>Example Failure</h2>
+  <div class="card bad">
+    <div class="label">bad (the pasted style)</div>
+    <pre>Short answer: There is no clean, reliable “Sunnify for a-Shell.”
+a-Shell can run some of this stuff, but Spotify downloaders are fragile...
+What actually has a chance of working
+1. Fix yt-dlp first...
+Reality check
+• Full desktop tools will never run.
+Better practical alternatives...
+Want me to give you a minimal pure-Python script that...</pre>
+  </div>
+
+  <h2>Corrected Register</h2>
+  <div class="card good">
+    <div class="label">good</div>
+    <pre>No clean Sunnify equivalent exists for a-Shell.
+
+yt-dlp + spotDL is the only path that sometimes works. Both still depend on a functioning yt-dlp and the native ffmpeg. Spotify links themselves are not supported by yt-dlp.
+
+Install and test:
+python3 -m pip install -U yt-dlp
+yt-dlp -x --audio-format mp3 "https://www.youtube.com/watch?v=dQw4w9wgXcQ"
+
+If that fails, the exact error is required. spotDL is next:
+python3 -m pip install spotdl
+spotdl "https://open.spotify.com/track/..."
+
+Expect dependency or memory failures. Desktop tools will not run. Pure-Python scrapers without yt-dlp are worse.
+
+If you only need single tracks, pull title/artist from the public embed and feed the search string to yt-dlp. That is currently the least fragile route inside a-Shell.</pre>
+  </div>
+
+  <h2>Skill Source</h2>
+  <p><a href="https://github.com/richsteve17/no-frat-bro/blob/main/skill/SKILL.md">skill/SKILL.md</a></p>
+
+  <footer>
+    Built to stop the frat-bro register.<br>
+    Repo: <a href="https://github.com/richsteve17/no-frat-bro">richsteve17/no-frat-bro</a>
+  </footer>
+</body>
+</html>
